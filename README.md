@@ -1,18 +1,31 @@
 # Omkar Paitwar — Portfolio
 
-A single-file, self-contained portfolio website. No build step, no dependencies,
-no external assets — the profile photo and résumé PDF are embedded directly in
-`index.html` as base64 data, so this repo will always deploy correctly with
-zero configuration.
+A self-contained portfolio website that also works as an installable web app
+(PWA) — visitors can add it to their home screen / desktop like a native app,
+using your circuit-board logo as the app icon.
 
 ## Structure
 
 ```
 .
-├── index.html      # the entire site (HTML + CSS + JS, all inline)
-├── vercel.json      # tells Vercel this is a static site, no build needed
+├── index.html                    # the entire site (HTML + CSS + JS, all inline)
+├── manifest.json                 # PWA manifest — app name, colors, icons
+├── sw.js                         # service worker — enables offline loading + installability
+├── icons/
+│   ├── icon-192.png              # standard app icon
+│   ├── icon-512.png              # standard app icon (large)
+│   ├── icon-maskable-192.png     # Android adaptive icon (safe-zone padded)
+│   ├── icon-maskable-512.png     # Android adaptive icon (large)
+│   ├── apple-touch-icon.png      # iOS home screen icon
+│   ├── favicon-32.png / favicon-16.png
+├── vercel.json                   # tells Vercel this is a static site, no build needed
 └── README.md
 ```
+
+The photo and résumé PDF are still embedded directly in `index.html` as
+base64 data, so the core page has zero external dependencies. The
+`manifest.json`, `sw.js`, and `icons/` folder are what make it installable
+as a web app — all generated from your uploaded logo.
 
 ## Deploy on Vercel (via GitHub)
 
