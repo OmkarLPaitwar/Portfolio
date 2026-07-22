@@ -2,7 +2,7 @@
   "name": "Omkar Paitwar — Full Stack Developer",
   "short_name": "Omkar.dev",
   "description": "Portfolio of Omkar Paitwar, Full Stack Developer — projects, experience, and skills.",
-  "start_url": "./index.html",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
